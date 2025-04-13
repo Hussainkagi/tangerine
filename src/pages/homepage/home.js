@@ -214,7 +214,7 @@ const HomePage = () => {
         {/* Third Row */}
         <div className="row mb-4">
           <div className="col-md-8">
-            <Card title="Sales by App">
+            <Card title="Sales by age">
               <BarChart data={barChartData} />
             </Card>
           </div>

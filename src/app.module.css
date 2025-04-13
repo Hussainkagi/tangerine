@@ -1,0 +1,19 @@
+/* App.module.css */
+.appContainer {
+  display: flex;
+  min-height: 100vh;
+}
+
+.contentArea {
+  flex-grow: 1;
+  margin-left: 260px; /* Must match sidebar width */
+  background-color: #f8f9fa;
+  min-height: 100vh;
+}
+
+/* Adjust margin for smaller screens to match responsive sidebar */
+@media (max-width: 992px) {
+  .contentArea {
+    margin-left: 60px; /* Must match collapsed sidebar width */
+  }
+}

@@ -1,10 +1,9 @@
 import React, { useState } from "react";
+import styles from "./navbar.module.css";
 
 const Navbar = () => {
-  // State to track which tooltip is visible
   const [activeTooltip, setActiveTooltip] = useState(null);
 
-  // Simple tooltip handlers
   const showTooltip = (id) => {
     setActiveTooltip(id);
   };
@@ -13,7 +12,6 @@ const Navbar = () => {
     setActiveTooltip(null);
   };
 
-  // Custom tooltip component
   const Tooltip = ({ id, text, isVisible }) => {
     if (!isVisible) return null;
 
@@ -42,7 +40,7 @@ const Navbar = () => {
             <i className="bi bi-house-door-fill"></i>
           </li>
           <li className="breadcrumb-item">
-            <a href="#">Components</a>
+            <a href="/home">Components</a>
           </li>
           <li className="breadcrumb-item active">Sales</li>
         </ol>
@@ -56,7 +54,7 @@ const Navbar = () => {
           </div>
           <div className="icons d-flex align-items-center">
             <div
-              className="mx-2 position-relative"
+              className={`mx-2 position-relative ${styles.nav__icon}`}
               onMouseEnter={() => showTooltip("settings")}
               onMouseLeave={hideTooltip}
             >
@@ -68,7 +66,7 @@ const Navbar = () => {
               />
             </div>
             <div
-              className="mx-2 position-relative"
+              className={`mx-2 position-relative ${styles.nav__icon}`}
               onMouseEnter={() => showTooltip("notifications")}
               onMouseLeave={hideTooltip}
             >
@@ -80,7 +78,7 @@ const Navbar = () => {
               />
             </div>
             <div
-              className="mx-2 position-relative"
+              className={`mx-2 position-relative ${styles.nav__icon}`}
               onMouseEnter={() => showTooltip("mail")}
               onMouseLeave={hideTooltip}
             >

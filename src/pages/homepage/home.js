@@ -4,7 +4,7 @@ import StatCard from "../../components/statCard/statCard";
 import PieChart from "../../components/pieChart/pieChart";
 import LineChart from "../../components/lineChart/lineChart";
 import BarChart from "../../components/barChart/barChart";
-
+import styles from "./home.module.css";
 const HomePage = () => {
   const channelsData = {
     labels: ["Direct", "Facebook", "Twitter", "Instagram", "Referral"],
@@ -121,14 +121,7 @@ const HomePage = () => {
       {/* Charts Row */}
       <div className="row mb-4">
         <div className="col-md-5">
-          <Card
-            title="Channels"
-            headerRight={
-              <button className="btn btn-sm btn-outline-secondary">
-                VIEW REPORT
-              </button>
-            }
-          >
+          <Card title="Channels">
             <div className="row">
               <div className="col-md-6">
                 <div style={{ height: 220 }}>
@@ -136,81 +129,44 @@ const HomePage = () => {
                 </div>
               </div>
               <div className="col-md-6">
-                <div className="mb-2">
-                  <div className="d-flex align-items-center">
-                    <div
-                      className="color-dot me-2"
-                      style={{
-                        backgroundColor: "#36495d",
-                        width: 10,
-                        height: 10,
-                        borderRadius: "50%",
-                      }}
-                    ></div>
-                    <span>Direct</span>
+                {channelsData.labels.map((label, index) => (
+                  <div className="mb-2" key={label}>
+                    <div className="d-flex align-items-center">
+                      <div
+                        className="me-2"
+                        style={{
+                          backgroundColor: channelsData.colors[index],
+                          width: 10,
+                          height: 10,
+                          borderRadius: "50%",
+                        }}
+                      ></div>
+                      <span>{label}</span>
+                    </div>
                   </div>
-                </div>
-                <div className="mb-2">
-                  <div className="d-flex align-items-center">
-                    <div
-                      className="color-dot me-2"
-                      style={{
-                        backgroundColor: "#1e88e5",
-                        width: 10,
-                        height: 10,
-                        borderRadius: "50%",
-                      }}
-                    ></div>
-                    <span>Facebook</span>
-                  </div>
-                </div>
-                <div className="mb-2">
-                  <div className="d-flex align-items-center">
-                    <div
-                      className="color-dot me-2"
-                      style={{
-                        backgroundColor: "#ff4560",
-                        width: 10,
-                        height: 10,
-                        borderRadius: "50%",
-                      }}
-                    ></div>
-                    <span>Twitter</span>
-                  </div>
-                </div>
-                <div className="mb-2">
-                  <div className="d-flex align-items-center">
-                    <div
-                      className="color-dot me-2"
-                      style={{
-                        backgroundColor: "#775dd0",
-                        width: 10,
-                        height: 10,
-                        borderRadius: "50%",
-                      }}
-                    ></div>
-                    <span>Instagram</span>
-                  </div>
-                </div>
-                <div className="mb-2">
-                  <div className="d-flex align-items-center">
-                    <div
-                      className="color-dot me-2"
-                      style={{
-                        backgroundColor: "#2b908f",
-                        width: 10,
-                        height: 10,
-                        borderRadius: "50%",
-                      }}
-                    ></div>
-                    <span>Referral</span>
-                  </div>
-                </div>
+                ))}
               </div>
             </div>
-            <div className="mt-3 text-muted small">
-              More than <strong>1,200,000</strong> sales are made using referral
-              marketing, and <strong>700,000</strong> are from social media.
+
+            <div className="d-flex justify-content-between align-items-center mt-5">
+              <div>
+                <div className="text-muted small">
+                  More than <strong>1,200,000</strong> sales are made using
+                  referral marketing, and <strong>700,000</strong> are from
+                  social media.
+                </div>
+              </div>
+              <div>
+                <button
+                  type="button"
+                  className={styles.btn__read__more}
+                  data-bs-toggle="tooltip"
+                  data-bs-placement="top"
+                  title="Other info related to this chart"
+                >
+                  Read more
+                </button>
+              </div>
             </div>
           </Card>
         </div>

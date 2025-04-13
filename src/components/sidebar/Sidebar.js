@@ -85,7 +85,13 @@ const Sidebar = () => {
         </div>
 
         <div className={styles.userProfile}>
-          <div className={styles.avatar}></div>
+          <div className={styles.avatar}>
+            <img
+              className={styles.avatar}
+              src="https://randomuser.me/api/portraits/men/75.jpg"
+              alt=""
+            />
+          </div>
           <span>Jonathan Kim</span>
         </div>
 

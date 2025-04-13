@@ -70,10 +70,10 @@ const Navbar = () => {
               onMouseEnter={() => showTooltip("notifications")}
               onMouseLeave={hideTooltip}
             >
-              <i className="bi bi-bell-fill"></i>
+              <i class="bi bi-person-circle"></i>
               <Tooltip
                 id="notifications"
-                text="Notifications"
+                text="user profile"
                 isVisible={activeTooltip === "notifications"}
               />
             </div>

@@ -1,5 +1,3 @@
-
-
 .sidebar {
   width: 260px;
   height: 100vh;
@@ -20,7 +18,7 @@
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   display: flex;
   align-items: center;
-  flex-shrink: 0; 
+  flex-shrink: 0;
 }
 
 .userProfile {
@@ -43,12 +41,10 @@
   overflow-y: auto;
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
-  
 
   scrollbar-width: thin;
   scrollbar-color: rgba(255, 255, 255, 0.3) transparent;
 }
-
 
 .sidebarMenu::-webkit-scrollbar {
   width: 6px;
@@ -137,21 +133,102 @@
 .accordionCollapse.show {
   display: block;
 }
+.hamburgerButton {
+  display: none;
+  position: fixed;
+  top: 15px;
+  left: 15px;
+  z-index: 999;
+  background: transparent;
+  border: none;
+  color: #000;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.closeButton {
+  background: transparent;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+}
+
+.mobileOverlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+}
+
+.mobileOverlay.active {
+  display: block;
+}
+
+@media (max-width: 576px) {
+  .sidebar {
+    width: 0;
+    height: 100vh;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease, width 0s 0.3s;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    overflow-y: auto;
+  }
+
+  .sidebar.expanded {
+    width: 260px;
+    transform: translateX(0);
+    transition: transform 0.3s ease;
+    height: 100vh;
+  }
+
+  .hamburgerButton {
+    display: block;
+  }
+
+  .sidebar.expanded span,
+  .sidebar.expanded .userProfile span {
+    display: inline;
+  }
+
+  .sidebar.expanded .navLink i[class*="bi-chevron"] {
+    display: inline;
+  }
+
+  .sidebar.expanded .accordionCollapse.show {
+    display: block;
+  }
+
+  .sidebar span,
+  .userProfile span {
+    display: inline;
+  }
+
+  .navLink i[class*="bi-chevron"] {
+    display: inline;
+  }
+}
 
 @media (max-width: 992px) {
   .sidebar {
     width: 60px;
   }
-  
-  .sidebar span, 
+
+  .sidebar span,
   .userProfile span {
     display: none;
   }
-  
+
   .navLink i[class*="bi-chevron"] {
     display: none;
   }
-  
+
   .accordionCollapse.show {
     display: none;
   }

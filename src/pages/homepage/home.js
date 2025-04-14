@@ -12,7 +12,6 @@ const HomePage = () => {
     colors: ["#36495d", "#1e88e5", "#ff4560", "#775dd0", "#2b908f"],
   };
 
-  // Data for line chart
   const revenueData = {
     labels: [
       "Jan",
@@ -48,7 +47,6 @@ const HomePage = () => {
     ],
   };
 
-  // Data for bar chart
   const barChartData = {
     labels: ["App 01", "App 02", "App 03", "App 04", "App 05", "App 06"],
     datasets: [

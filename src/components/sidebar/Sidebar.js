@@ -1,4 +1,3 @@
-// components/Sidebar.js
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import styles from "./sidebar.module.css";
@@ -70,7 +69,7 @@ const Sidebar = () => {
         <div className={styles.sidebarHeader}>
           <div>
             <i className="bi bi-grid-fill me-2"></i>
-            <span className="fw-bold">Material Dashboard PRO</span>
+            <span className="fw-bold">Tangerine-digital Dashboard </span>
           </div>
 
           {isMobile && isSidebarExpanded && (

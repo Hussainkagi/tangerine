@@ -40,7 +40,7 @@ const Navbar = () => {
             <i className="bi bi-house-door-fill"></i>
           </li>
           <li className="breadcrumb-item">
-            <a href="/home">Components</a>
+            <a href="/">Components</a>
           </li>
           <li className="breadcrumb-item active">Sales</li>
         </ol>
